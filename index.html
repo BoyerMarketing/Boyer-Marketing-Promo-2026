@@ -171,7 +171,7 @@
             transform: translateX(0);
         }
 
-        /* HERO SECTION - MEJORADO */
+        /* HERO SECTION - MEJORADO (SIN LOGO REPETIDO) */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -179,7 +179,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 150px 5% 100px;
+            padding: 120px 5% 100px; /* Reducido padding-top */
             position: relative;
             overflow: hidden;
         }
@@ -193,18 +193,6 @@
             height: 100px;
             background: linear-gradient(to top, rgba(0,0,0,1), transparent);
             z-index: 1;
-        }
-
-        .hero-logo {
-            max-width: 220px;
-            margin-bottom: 40px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
-            transition: var(--transition);
-            z-index: 2;
-        }
-
-        .hero-logo:hover {
-            transform: scale(1.05);
         }
 
         .hero h1 {
@@ -222,6 +210,7 @@
             position: relative;
             color: var(--gray);
             font-weight: 400;
+            line-height: 1.5;
         }
 
         .hero-cta-container {
@@ -788,8 +777,18 @@
         }
 
         @media (max-width: 768px) {
-            .hero-logo {
-                max-width: 180px;
+            .hero {
+                padding: 100px 5% 80px; /* Ajuste responsive */
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+                margin-bottom: 20px;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1.1rem, 3vw, 1.5rem);
+                margin-bottom: 40px;
             }
             
             section {
@@ -825,11 +824,20 @@
             .process-steps {
                 grid-template-columns: 1fr;
             }
+            
+            .hero-stats {
+                margin-top: 50px;
+                gap: 25px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: clamp(2.5rem, 8vw, 3.5rem);
+                font-size: clamp(2.2rem, 7vw, 3.2rem);
             }
             
             .section-title, .contact-title {
@@ -839,6 +847,14 @@
             .hero-stats {
                 flex-direction: column;
                 gap: 25px;
+            }
+            
+            .cta-button, .contact-cta {
+                padding: 18px 35px;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
             }
         }
 
@@ -869,10 +885,8 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (SIN LOGO REPETIDO) -->
     <section class="hero">
-        <img src="https://i.ibb.co/5gg3XHg1/Boyer-Marketing-Blanco.png" class="hero-logo reveal" alt="Boyer Marketing Logo">
-        
         <h1 class="reveal">Tu presencia digital <span class="yellow-text">no puede esperar</span></h1>
         
         <p class="hero-subtitle reveal">
@@ -911,7 +925,7 @@
         </div>
     </section>
 
-    <!-- PROBLEM SECTION - AHORA CON 4 TARJETAS -->
+    <!-- PROBLEM SECTION - 4 TARJETAS -->
     <section id="problem">
         <div class="container">
             <h2 class="section-title reveal">Tu sitio web actual <span class="yellow-text">te está costando clientes:</span></h2>
@@ -947,7 +961,7 @@
         <p class="reveal"><strong>Tener un sitio web no es suficiente. Tener un sitio web que convierte sí lo es.</strong></p>
     </section>
 
-    <!-- SERVICES SECTION - AHORA CON 4 TARJETAS -->
+    <!-- SERVICES SECTION - 4 TARJETAS -->
     <section id="services" style="background: var(--dark-bg);">
         <div class="container">
             <h2 class="section-title reveal">Nuestros <span class="yellow-text">Servicios Web</span></h2>
@@ -1005,7 +1019,7 @@
         </div>
     </section>
 
-    <!-- PROCESS SECTION - 4 TARJETAS (YA ERA PAR) -->
+    <!-- PROCESS SECTION - 4 TARJETAS -->
     <section id="process">
         <div class="container">
             <h2 class="section-title reveal">Nuestro Proceso de <span class="yellow-text">Desarrollo</span></h2>
@@ -1039,7 +1053,7 @@
         </div>
     </section>
 
-    <!-- COMPARISON SECTION - YA ES PAR (2 COLUMNAS) -->
+    <!-- COMPARISON SECTION - 2 COLUMNAS -->
     <section>
         <div class="container">
             <h2 class="section-title reveal">Web Amateur vs <span class="yellow-text">Web Profesional</span></h2>
